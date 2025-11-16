@@ -1,0 +1,891 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.1s linear;
+}
+
+body {
+    height: fit-content;
+    font-family: 'Jost', sans-serif;
+    background-color: white;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+li {
+    list-style-type: none;
+    display: inline-block;
+}
+
+button {
+    border: none;
+}
+
+.container {
+    width: 86%;
+    margin: auto;
+}
+
+/* /////////////////////////////////////////// end basics /////////////////////////////////////////// */
+
+.space-1 {
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: wrap;
+    background-color: white;
+}
+
+.space-1 div {
+    height: 20px;
+}
+
+.space-1 div a {
+    height: 100%;
+    color: rgb(34, 51, 34);
+    padding: 0 10px;
+    font-size: 14px;
+    position: relative;
+    display: inline;
+}
+
+.space-1 a::before,
+.space-1 a::after {
+    content: "";
+    width: 2px;
+    height: 0;
+    background: rgb(184, 151, 90);
+    position: absolute;
+    transition: 1s;
+}
+
+.space-1 a::before {
+    left: 0;
+    bottom: 0;
+}
+
+.space-1 a::after {
+    right: 0;
+    top: 0;
+}
+
+.space-1 a:hover::before,
+.space-1 a:hover::after {
+    height: 100%;
+}
+
+.i-1:hover i {
+    color: rgb(184, 151, 90);
+    transform: rotateY(180deg);
+}
+
+.space-2 {
+    height: 85px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: wrap;
+    background-color: white;
+}
+
+.space-2 a {
+    padding: 10px;
+    font-size: 18px;
+    color: rgb(51, 68, 34);
+}
+
+.space-2 a:hover {
+    color: rgb(134, 102, 51);
+}
+
+.space-2 .center-space .link-center {
+    position: relative;
+}
+
+.space-2 .center-space .link-center::after,
+.space-2 .center-space .link-center::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-color: rgb(134, 102, 51);
+    border-style: solid;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.space-2 .center-space .link-center::after {
+    border-width: 2px 0;
+    width: 97%;
+    height: 95%;
+    transition: 0.6s;
+    transform: scale(0, 1);
+    transform-origin: left;
+}
+
+.space-2 .center-space .link-center:hover::after,
+.space-2 .center-space .link-center:hover::before {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1, 1);
+}
+
+.space-2 .center-space .link-center::before {
+    border-width: 0 2px;
+    width: 94%;
+    height: 100%;
+    transition: 0.3s;
+    transform: scale(1, 0);
+    transform-origin: bottom;
+}
+
+.space-2 .main-menue {
+    position: relative;
+    z-index: 10;
+}
+
+.space-2 .main-menue .angle {
+    padding-left: 5px;
+    font-size: 14px;
+}
+
+.space-2 .main-menue .drop-menue {
+    width: 280px;
+    padding: 15px;
+    display: flex;
+    background: rgb(245, 245, 240);
+    justify-content: space-between;
+    position: absolute;
+    top: 50px;
+    left: -100%;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7), -1px -1px 2px rgba(0, 0, 0, 0.7);
+    transition: 1s;
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0, 0);
+    z-index: 5;
+}
+
+.space-2 .main-menue:hover .drop-menue {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1, 1);
+}
+
+.space-2 .drop-menue li {
+    display: block;
+    margin: 5px 0;
+}
+
+.space-2 .drop-menue .first-li {
+    width: fit-content;
+    height: 30px;
+    margin-bottom: 10px;
+    font-weight: 300;
+    border-bottom: 1px dotted rgb(51, 68, 34);
+}
+
+.space-2 .drop-menue li a {
+    padding: 0;
+}
+
+.space-2 .drop-menue li .link-drop:hover {
+    transform: scale(1.1, 1.1);
+}
+
+.right-space .bag {
+    position: relative;
+}
+
+.right-space .bag::after {
+    content: "7";
+    width: 20px;
+    height: 20px;
+    background: rgb(184, 151, 90);
+    font-size: 17px;
+    color: rgb(255, 255, 255);
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    position: absolute;
+    transition: 0.5s;
+    left: 13px;
+    top: -6px;
+}
+
+.right-space .bag:hover::after {
+    top: -10px;
+}
+
+.space-3 {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    background-color: rgb(68, 85, 51);
+}
+
+.space-3 a {
+    color: rgb(184, 151, 90);
+    height: 25px;
+    border-bottom: 2px solid rgb(184, 151, 90);
+}
+
+.space-3 a:hover {
+    letter-spacing: 2px;
+}
+
+/* /////////////////////////////////////////// end header /////////////////////////////////////////// */
+
+.intro {
+    width: 100%;
+    height: 90vh;
+    background: url(../images/16106.jpg) center;
+    background-size: cover;
+    position: relative;
+}
+
+.intro .intro-text {
+    width: 500px;
+    text-align: center;
+    position: absolute;
+    top: 30%;
+    left: 10%;
+}
+
+.intro span {
+    color: rgb(134, 102, 51);
+    font-family: 'Clicker Script', cursive;
+    font-size: 50px;
+}
+
+.intro h1 {
+    padding: 0 10px;
+    font-size: 48px;
+    color: rgb(51, 68, 34);
+}
+
+.intro p {
+    width: 450px;
+    font-size: 18px;
+    color: rgb(255,255,204);
+    margin: 15px auto 30px;
+    padding: 0 20px;
+    word-spacing: 2px;
+}
+
+.intro a {
+    background: rgb(68, 85, 51);
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    text-transform: uppercase;
+    padding: 15px 25px;
+    transition: 0.5s;
+}
+
+.intro a:hover {
+    color: rgb(68, 85, 51);
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(68, 85, 51);
+}
+
+/* /////////////////////////////////////////// end main /////////////////////////////////////////// */
+
+.types {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.types>div {
+    width: 370px;
+    height: 370px;
+    margin: 40px 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.types>div::after {
+    content: "";
+    width: 100%;
+    height: 30%;
+    background-image: linear-gradient(to top, rgb(34, 51, 34), rgba(34, 51, 34, 0.05));
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.types div img {
+    width: 100%;
+    height: 100%;
+    transition: 1s;
+}
+
+.types div:hover img {
+    transform: scale(1.1, 1.1);
+}
+
+.types div .type {
+    width: 100%;
+    height: 30%;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    transform: translateY(45px);
+    transition: 1s;
+}
+
+.types div:hover .type {
+    transform: translateY(0px);
+}
+
+.types div .type h2 {
+    color: rgb(255, 255, 255);
+    margin: 15px 0 20px;
+}
+
+.types div .type a {
+    color: rgb(184, 151, 90);
+    font-size: 18px;
+    font-weight: bold;
+    padding-bottom: 3px;
+    border-bottom: 3px solid rgb(184, 151, 90);
+}
+
+.types div .type a:hover {
+    letter-spacing: 1px;
+}
+
+/* /////////////////////////////////////////// end section-one /////////////////////////////////////////// */
+
+.animal-space {
+    margin-top: 60px;
+    position: relative;
+}
+
+.animal-space .Animal {
+    min-height: 50px;
+    border-bottom: 1px solid rgba(51, 68, 34, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.animal-space .Animal h2 {
+    font-size: 35px;
+    color: rgb(51, 68, 34);
+    font-weight: 500;
+}
+
+.animal-space .Animal a {
+    height: 65px;
+    margin-left: 25px;
+    color: rgb(51, 68, 34);
+    font-size: 20px;
+}
+
+.animal-space .Animal .link-select {
+    color: rgb(134, 102, 51);
+    border-bottom: 5px solid rgb(134, 102, 51);
+}
+
+.animal-space .ANimals {
+    display: flex;
+    justify-content: space-between;
+}
+
+.animal-space .ANimals div {
+    width: 24%;
+    height: 500px;
+    margin-top: 50px;
+    text-align: center;
+    position: relative;
+    perspective: 1000px;
+}
+
+.animal-space .ANimals div img {
+    width: 100%;
+    height: 75%;
+}
+
+.animal-space .ANimals div a {
+    padding: 10px 0;
+    font-size: 20px;
+    color: rgb(51, 68, 34);
+}
+
+.animal-space .ANimals div:hover a {
+    color: rgb(134, 102, 51);
+}
+
+.animal-space .ANimals div p {
+    color: rgb(51, 68, 34);
+    opacity: 0.8;
+    font-size: 18px;
+}
+
+.animal-space .ANimals div:hover p {
+    opacity: 1;
+}
+
+.animal-space .ANimals div:hover p span {
+    opacity: 0.7;
+}
+
+.animal-space .ANimals div p span {
+    text-decoration: line-through;
+    margin-left: 10px;
+}
+
+.animal-space .ANimals div .icon {
+    width: 60%;
+    height: 10%;
+    display: flex;
+    position: absolute;
+    left: 20%;
+    bottom: 30%;
+    z-index: 10;
+}
+
+.animal-space .ANimals div .icon a {
+    color: rgb(51, 68, 34);
+    width: calc(100% / 3);
+    background: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 28px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20%);
+    transition: 1s;
+}
+
+.animal-space .ANimals div:hover .icon a {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.animal-space .ANimals div .icon a:hover {
+    background: rgb(134, 102, 51);
+    color: rgb(255, 255, 255);
+}
+
+.animal-space .ANimals>div::after {
+    content: "";
+    width: 100%;
+    height: 75%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-size: cover;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    transition: 1s;
+    transform-style: preserve-3d;
+}
+
+.animal-space .ANimals>.div1-sec2::after {
+    background: url(../images/eagle.avif);
+}
+
+.animal-space .ANimals>.div2-sec2::after {
+    background: url(../images/scarlet.avif) center;
+}
+
+.animal-space .ANimals>.div3-sec2::after {
+    background: url(../images/Indian\ Peacock.avif) center;
+}
+
+.animal-space .ANimals>.div4-sec2::after {
+    background: url(../images/penguin.avif) bottom;
+}
+
+.animal-space .ANimals>div:hover::after {
+    transform: rotateY(0deg);
+}
+
+.animal-space>a {
+    position: absolute;
+    font-size: 30px;
+    opacity: 0.7;
+    color: rgb(51, 68, 34);
+}
+
+.animal-space>a:hover {
+    opacity: 1;
+}
+
+.animal-space .left {
+    top: 50%;
+    left: -25px;
+}
+
+.animal-space .right {
+    top: 50%;
+    right: -25px;
+}
+
+/* /////////////////////////////////////////// end section-two /////////////////////////////////////////// */
+
+.animal-sec3 {
+    width: 100%;
+    height: 400px;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(248, 252, 245);
+    position: relative;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1), -1px -1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.animal-sec3>h2 {
+    font-size: 34px;
+    color: rgb(51, 68, 34);
+}
+
+.animal-sec3>p {
+    width: 50%;
+    text-align: center;
+    font-size: 24px;
+    line-height: 1.5;
+    color: rgba(51, 68, 34, 0.7);
+}
+
+.animal-sec3>div {
+    display: flex;
+    align-items: center;
+}
+
+.animal-sec3>div img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.animal-sec3 .family-sec3-animal-sec3 {
+    margin-left: 10px;
+}
+
+.animal-sec3 .family-sec3-animal-sec3 h4 {
+    color: rgb(51, 68, 34);
+    padding-bottom: 5px;
+}
+
+.animal-sec3 .family-sec3-animal-sec3 p {
+    color: rgba(51, 68, 34, 0.7);
+    font-weight: bold;
+}
+
+.animal-sec3>a {
+    position: absolute;
+    font-size: 30px;
+    opacity: 0.7;
+    color: rgb(51, 68, 34);
+}
+
+.animal-sec3>a:hover {
+    opacity: 1;
+}
+
+.animal-sec3 .left {
+    top: 50%;
+    left: 10%;
+}
+
+.animal-sec3 .right {
+    top: 50%;
+    right: 10%;
+}
+
+.family-sec3{
+    margin-left: 11px;
+}
+
+/* /////////////////////////////////////////// end section-three /////////////////////////////////////////// */
+
+.animal-sec4 .info-sec4 {
+    justify-content: center;
+    border-bottom: none;
+}
+
+.animal-sec4 .ANimals>div {
+    overflow: hidden;
+}
+
+.animal-sec4 .ANimals>div::after {
+    background: url(../images/byron\ bay.jpg) center;
+    background-size: cover;
+    transform: translateY(-75%);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.animal-space .ANimals>div:hover::after {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+/* /////////////////////////////////////////// end section-four /////////////////////////////////////////// */
+
+.sec-5 {
+    width: 100%;
+    min-height: 600px;
+    margin-top: 70px;
+    background-color: rgb(248, 252, 245);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1), -1px -1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.sec-5 h2 {
+    text-align: center;
+    padding: 30px 0;
+    font-size: 34px;
+    color: rgb(51, 68, 34);
+}
+
+.news-sec5 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.news-sec5>div {
+    width: 30%;
+    height: 100%;
+    perspective: 800px;
+}
+
+.news-sec5>div img {
+    width: 100%;
+    height: 400px;
+}
+
+.news-sec5>div img:hover {
+    transform: translateZ(25px);
+}
+
+.news-sec5>div span {
+    display: block;
+    color: rgba(51, 68, 34, 0.7);
+    padding-top: 15px;
+}
+
+.news-sec5>div a {
+    color: rgb(51, 68, 34);
+    font-size: 22px;
+    margin: 15px 0;
+}
+
+.news-sec5>div:hover a:not(.Readmore) {
+    color: rgb(134, 102, 51);
+}
+
+.news-sec5>div .Readmore {
+    text-decoration: underline;
+    margin-bottom: 50px;
+}
+
+.news-sec5>div .Readmore:hover {
+    transform: scale(1.1, 1.1);
+}
+
+.news-sec5>div p {
+    color: rgba(51, 68, 34, 0.7);
+    font-size: 18px;
+}
+
+/* /////////////////////////////////////////// end section-five /////////////////////////////////////////// */
+
+.access-sec6 {
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.access-sec6 div>div {
+    width: 100%;
+    height: 60px;
+    overflow: hidden;
+    position: relative;
+}
+
+.access-sec6 div>div i {
+    font-size: 48px;
+    margin-bottom: 30px;
+    color: rgba(51, 68, 34, 0.5);
+    width: 100%;
+}
+
+.access-sec6 div div #icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: rgb(51, 68, 34);
+    transform: translateY(65px);
+}
+
+.access-sec6 div:hover>div i {
+    transform: translateY(-50px);
+}
+
+.access-sec6 div:hover div #icon {
+    transform: translateY(0);
+}
+
+.access-sec6 h3 {
+    color: rgb(51, 68, 34);
+}
+
+.access-sec6 p {
+    margin-top: 10px;
+    color: rgb(51, 68, 34);
+}
+
+/* /////////////////////////////////////////// end section-six /////////////////////////////////////////// */
+
+.footer {
+    width: 100%;
+    min-height: 550px;
+    margin-top: 70px;
+    background: rgb(34, 51, 34);
+}
+
+.footer-sec {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: rgb(255, 255, 255);
+}
+
+.footer-sec>div {
+    display: flex;
+    padding-top: 20px;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footer-sec .div1 {
+    width: 100%;
+    min-height: 120px;
+    align-items: center;
+    border-bottom: 1px solid rgba(248, 252, 245, 0.3);
+}
+
+.footer-sec .div1 div p {
+    padding-top: 15px;
+}
+
+.footer-sec .div1 div input {
+    width: 400px;
+    height: 50px;
+    padding-left: 15px;
+    font-size: 20px;
+}
+
+.footer-sec .div1 .send {
+    display: flex;
+}
+
+.footer-sec .div1 div .subscribe {
+    color: rgb(255, 255, 255);
+    width: 150px;
+    height: 50px;
+    margin-left: 10px;
+    background: rgb(134, 102, 51);
+    font-size: 22px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.footer-sec .div1 div input:focus {
+    outline: none;
+}
+
+.footer-sec .div1 div a {
+    color: rgb(200, 215, 200);
+    font-size: 24px;
+    margin-left: 10px;
+}
+
+.footer-sec .div1 div a:hover {
+    color: rgb(255, 255, 255);
+    transform: scale(1.1);
+}
+
+.footer-sec .div2 {
+    width: 100%;
+    min-height: 300px;
+    margin-top: 50px;
+    border-bottom: 1px solid rgba(248, 252, 245, 0.3);
+}
+
+.footer-sec .div2 a {
+    display: block;
+    color: rgb(200, 200, 200);
+    margin-bottom: 10px;
+    transition: 0.5s;
+}
+
+.footer-sec .div2 a:hover {
+    text-decoration: underline;
+    transform: scalex(1.08);
+}
+
+.footer-sec .div2 h3 {
+    margin-bottom: 25px;
+}
+
+.footer-sec .div3 {
+    width: 100%;
+    min-height: 50px;
+    justify-content: center;
+}
+
+.footer-sec .div3 p {
+    color: rgb(200, 200, 200);
+}
+
+.footer-sec .div3 p span,
+.footer-sec .div3 p a {
+    color: rgb(184, 151, 90);
+    padding: 0 2px;
+}
+
+.footer-sec .div3 p a:hover {
+    text-decoration: underline;
+    letter-spacing: 1px;
+}
+
+.footer-sec .div3 p span i {
+    animation: anamy 0.5s linear infinite alternate;
+}
+
+@keyframes anamy {
+    0% {
+        color: rgb(255, 255, 255);
+        transform: scale(1);
+    }
+
+    100% {
+        color: rgb(184, 151, 90);
+        transform: scale(1.5);
+    }
+}
+/* /////////////////////////////////////////// end footer /////////////////////////////////////////// */
